@@ -14,6 +14,7 @@ public class Calculadora {
         System.out.println("1. Suma");
         System.out.println("2. Resta");
         System.out.println("3. Multiplicación");
+        System.out.println("4. División");
         System.out.print("Ingresa el número de la operación: ");
 
         int opcion = scanner.nextInt();
@@ -35,6 +36,14 @@ public class Calculadora {
                 break;
             case 3:
                 System.out.println("Resultado de la multiplicación: " + multiplicar(num1, num2));
+                break;
+            case 4:
+                // Verificar que el divisor no sea cero antes de realizar la división
+                if (num2 != 0) {
+                    System.out.println("Resultado de la división: " + dividir(num1, num2));
+                } else {
+                    System.out.println("Error: No se puede dividir entre cero.");
+                }
                 break;
             default:
                 System.out.println("Opción no válida.");
@@ -58,5 +67,10 @@ public class Calculadora {
     // Método para realizar la multiplicación
     public static double multiplicar(double a, double b) {
         return a * b;
+    }
+
+    // Método para realizar la división
+    public static double dividir(double a, double b) {
+        return a / b;
     }
 }
