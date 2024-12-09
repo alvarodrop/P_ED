@@ -15,6 +15,7 @@ public class Calculadora {
         System.out.println("2. Resta");
         System.out.println("3. Multiplicación");
         System.out.println("4. División");
+        System.out.println("5. Potencia");
         System.out.print("Ingresa el número de la operación: ");
 
         int opcion = scanner.nextInt();
@@ -45,6 +46,9 @@ public class Calculadora {
                     System.out.println("Error: No se puede dividir entre cero.");
                 }
                 break;
+            case 5:
+                System.out.println("Resultado de la potencia: " + potencia(num1, num2));
+                break;
             default:
                 System.out.println("Opción no válida.");
                 break;
@@ -72,5 +76,10 @@ public class Calculadora {
     // Método para realizar la división
     public static double dividir(double a, double b) {
         return a / b;
+    }
+
+    // Método para realizar la potencia
+    public static double potencia(double base, double exponente) {
+        return Math.pow(base, exponente);
     }
 }
